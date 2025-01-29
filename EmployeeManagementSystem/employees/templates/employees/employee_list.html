@@ -3,43 +3,7 @@
 <h2>Employee List</h2>
 <a href="{% url 'employee_create' %}">Add New Employee</a>
 
-<!-- Styling the table -->
-<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    th, td {
-        padding: 12px;
-        text-align: left;
-        border: 1px solid #ddd;
-    }
-
-    th {
-        background-color: #f2f2f2;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-
-    tr:hover {
-        background-color: #f1f1f1;
-    }
-
-    a {
-        color: #007bff;
-        text-decoration: none;
-        margin-right: 10px;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-</style>
-
-<table >
+<table>
     <tr>
         <th>Name</th>
         <th>Email</th>
@@ -47,7 +11,6 @@
         <th>Date of Joining</th>
         <th>Salary</th>
         <th>Actions</th>
-        <th></th>
     </tr>
     {% for employee in employees %}
     <tr>
@@ -56,9 +19,6 @@
         <td>{{ employee.department }}</td>
         <td>{{ employee.date_of_joining }}</td>
         <td>{{ employee.salary }}</td>
-        <td>
-            {{ employee.name }} - {{ employee.department }}
-        </td>
         <td>
             <a href="{% url 'employee_update' employee.id %}">Edit</a>
             <a href="{% url 'employee_delete' employee.id %}">Delete</a>

@@ -52,22 +52,3 @@ def export_employees_csv(request):
     response['Content-Disposition'] = 'attachment; filename="employees.csv"'
     df.to_csv(path_or_buf=response, index=False)
     return response
-
-
-# from django.shortcuts import render
-# from django.http import HttpResponse
-
-# def home(request):
-#     return HttpResponse("Welcome to the Employee Management System!")
-
-# def employee_list(request):
-#     return HttpResponse("This is the Employee List page!")
-
-# def employee_create(request):
-#     return HttpResponse("This is the Employee Create page!")
-
-# def employee_update(request, pk):
-#     return HttpResponse(f"Update Employee with ID {pk}!")
-
-# def employee_delete(request, pk):
-#     return HttpResponse(f"Delete Employee with ID {pk}!")
